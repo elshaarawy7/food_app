@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/pages/home_page.dart';
+import 'package:food_app/pages/spalch_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp( 
-      home: HomePage(),
+      home: SpalchPage(),
     );
   }
 }
