@@ -1,9 +1,23 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override 
+
+  List <String> items = [
+    "assets/catogry/Property 1=Default.png" , 
+    "assets/catogry/Property 1=Variant2.png" , 
+    "assets/catogry/Property 1=Variant3.png" , 
+
+
+  ];
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -25,7 +39,25 @@ class HomePage extends StatelessWidget {
         ),
       ), 
       body: Column(
-        
+        children: [
+          // banner 
+         CarouselSlider.builder(
+          itemCount: items.length, 
+           itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) => 
+           Image.asset(items [itemIndex]) , 
+           options: CarouselOptions(
+            height: 170 ,  
+            aspectRatio: 1 , 
+            viewportFraction: 0.8 , 
+            autoPlay: true , 
+            autoPlayInterval: Duration(seconds: 3),
+            autoPlayAnimationDuration: Duration(seconds: 3) ,  
+            autoPlayCurve: Curves.linear , 
+            enlargeCenterPage: true , 
+           ),
+          
+          ),
+        ],
       ),
     );
   }
