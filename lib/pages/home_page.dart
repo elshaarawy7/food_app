@@ -44,7 +44,9 @@ class _HomePageState extends State<HomePage> {
       name: "Vegetables" , 
 
       ) , 
-  ];
+  ]; 
+
+  
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -116,7 +118,32 @@ class _HomePageState extends State<HomePage> {
             
            
           
-          ), 
+          ),  
+
+          SizedBox(height: 20,) , 
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12), 
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Fruits" , style: TextStyle(
+                  color: Colors.black , 
+                  fontSize: 25 , 
+                  fontWeight: FontWeight.bold , 
+                ),) ,  
+
+                Text("See all" , style: TextStyle(
+                  color: Color(0XFF0CA201) , 
+                  fontSize: 20 , 
+                  fontWeight: FontWeight.bold , 
+                ),)
+              ],
+            ),
+          ) ,  
+
+
+
+          
 
           
         ],
