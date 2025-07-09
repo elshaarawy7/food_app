@@ -5,6 +5,7 @@ import 'package:food_app/helper/color.dart';
 import 'package:food_app/model/Podact-model.dart';
 import 'package:food_app/model/catogry_of_modal.dart';
 import 'package:food_app/model/prodact_items.dart';
+import 'package:food_app/widgets/custem_prodact.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -182,28 +183,8 @@ class _HomePageState extends State<HomePage> {
 
 
         
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                children: List.generate(
-                    product.length,
-                        (index) {
-                  final item = product[index];
-                  return ProductItem(
-                    image: item.image,
-                    name: item.name,
-                    rate: item.rate,
-                    rateCount: item.rateCount,
-                    price: item.price,
-                    onTap: () => toggleSelection(item),
-                    icon: isSelected(item) ? Icon(Icons.close)  : Icon(Icons.add),
-                  );
-                }),
-              ),
-            ),
-          ),
+          // prdact 
+          CustemProdact() ,
 
 
           // card Widget 
